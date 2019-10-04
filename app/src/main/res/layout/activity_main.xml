@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorFondo"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Inmobiliaria S.A." />
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/correo_hint"
+        android:inputType="textPersonName" />
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="20dp"></Space>
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/pass_hint"
+        android:inputType="textPassword" />
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="20dp"></Space>
+
+    <Button
+        android:id="@+id/btIngresar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/entrar" />
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="20dp"></Space>
+
+    <Button
+        android:id="@+id/btSalir"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Salir" />
+</LinearLayout>

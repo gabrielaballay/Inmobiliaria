@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.inmobiliaria.ui.home.PropietarioHome"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_propietario" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.inmobiliaria.ui.gallery_propiedades.OpPropiedades"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_propiedades" >
+        <action
+            android:id="@+id/action_nav_gallery_to_item_prop"
+            app:destination="@id/item_prop" />
+        <action
+            android:id="@+id/action_nav_gallery_to_contratosFragment"
+            app:destination="@id/contratosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.inmobiliaria.ui.op_inquilinos.OpInquilino"
+        android:label="@string/menu_inquilino"
+        tools:layout="@layout/fragment_inquilino" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.example.inmobiliaria.ui.op_pagos.OpPagos"
+        android:label="@string/menu_pago"
+        tools:layout="@layout/fragment_pagos" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.inmobiliaria.ui.op_contratos.OpContrato"
+        android:label="@string/menu_contrato"
+        tools:layout="@layout/fragment_contrato" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.example.inmobiliaria.ui.salir.SalirFragment"
+        android:label="@string/menu_salir"
+        tools:layout="@layout/fragment_salir" />
+
+    <fragment
+        android:id="@+id/item_prop"
+        android:name="com.example.inmobiliaria.ui.gallery_propiedades.ItemPropFragment"
+        android:label="Item Propiedades"
+        tools:layout="@layout/fragment_item_prop"/>
+    <fragment
+        android:id="@+id/contratosFragment"
+        android:name="com.example.inmobiliaria.ContratosFragment"
+        android:label="fragment_contratos"
+        tools:layout="@layout/fragment_contratos" />
+
+</navigation>
