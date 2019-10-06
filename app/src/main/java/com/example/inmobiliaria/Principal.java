@@ -1,5 +1,6 @@
 package com.example.inmobiliaria;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -9,8 +10,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.os.Parcelable;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -29,7 +32,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Principal extends AppCompatActivity implements InquilinoSelectFragment.OnFragmentInteractionListener, ItemPropFragment.OnFragmentInteractionListener,ContratosFragment.OnFragmentInteractionListener {
+public class Principal extends AppCompatActivity implements InquilinoSelectFragment.OnFragmentInteractionListener, ItemPropFragment.OnFragmentInteractionListener,ContratosFragment.OnFragmentInteractionListener , NavigationView.OnNavigationItemSelectedListener, PropFragment.OnFragmentInteractionListener{
     private Propietario p=new Propietario();
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -47,13 +50,12 @@ public class Principal extends AppCompatActivity implements InquilinoSelectFragm
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_send)
+                R.id.nav_tools)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
     }
 
     @Override
@@ -75,4 +77,13 @@ public class Principal extends AppCompatActivity implements InquilinoSelectFragm
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id=menuItem.getItemId();
+        Toast.makeText(getApplicationContext(),"Aca",Toast.LENGTH_LONG).show();
+        if(id==R.id.nav_send){
+            Toast.makeText(getApplicationContext(),"Aca",Toast.LENGTH_LONG).show();
+        }
+        return false;
+    }
 }

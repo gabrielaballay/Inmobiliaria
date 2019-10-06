@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery_propiedades.ItemPropFragment">
+
+    <ImageView
+        android:id="@+id/ImagenProp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="104dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/direccionProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/ImagenProp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/precioProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/ImagenProp"
+        app:layout_constraintTop_toBottomOf="@+id/direccionProp" />
+
+    <EditText
+        android:id="@+id/tipoProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/ImagenProp"
+        app:layout_constraintTop_toBottomOf="@+id/precioProp" />
+
+    <EditText
+        android:id="@+id/ambienteProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/ImagenProp"
+        app:layout_constraintTop_toBottomOf="@+id/tipoProp" />
+
+    <EditText
+        android:id="@+id/usoProp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/ImagenProp"
+        app:layout_constraintTop_toBottomOf="@+id/ambienteProp" />
+
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:text="Editar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImagenProp" />
+
+    <Button
+        android:id="@+id/btnGuardarCambio"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:text="Guardar"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImagenProp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

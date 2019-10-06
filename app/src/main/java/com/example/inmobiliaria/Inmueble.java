@@ -11,7 +11,16 @@ public class Inmueble {
     private boolean disponible;
     private Propietario id_prop;
 
-    public Inmueble(int idInmueble, int foto, String direccion, String tipo,double precio) {
+    public Inmueble(int foto, String direccion, int ambientes, String tipo, String uso, double precio) {
+        this.foto = foto;
+        this.direccion = direccion;
+        this.ambientes = ambientes;
+        this.tipo = tipo;
+        this.uso = uso;
+        this.precio = precio;
+    }
+
+    public Inmueble(int idInmueble, int foto, String direccion, String tipo, double precio) {
         this.idInmueble = idInmueble;
         this.foto = foto;
         this.direccion = direccion;

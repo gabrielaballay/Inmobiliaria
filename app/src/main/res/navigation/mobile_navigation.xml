@@ -17,11 +17,11 @@
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_propiedades" >
         <action
-            android:id="@+id/action_nav_gallery_to_item_prop"
-            app:destination="@id/item_prop" />
-        <action
             android:id="@+id/action_nav_gallery_to_contratosFragment"
             app:destination="@id/contratosFragment" />
+        <action
+            android:id="@+id/action_nav_gallery_to_fragment_prop"
+            app:destination="@id/fragment_prop" />
     </fragment>
 
     <fragment
@@ -58,5 +58,11 @@
         android:name="com.example.inmobiliaria.ContratosFragment"
         android:label="fragment_contratos"
         tools:layout="@layout/fragment_contratos" />
+    <fragment
+        android:id="@+id/fragment_prop"
+        android:name="com.example.inmobiliaria.PropFragment"
+        android:label="Propiedad"
+        tools:layout="@layout/fragment_prop"/>
+
 
 </navigation>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,10 @@ public class ItemVistas extends ArrayAdapter<Inmueble> {
     private Context context;
     private List<Inmueble> lista;
     private LayoutInflater li;
+    ImageView imagen;
+    TextView direccion;
+    TextView precio;
+    TextView tipo;
 
     public ItemVistas(@NonNull Context context, int resource, @NonNull List<Inmueble> objects, LayoutInflater li) {
         super(context, resource, objects);
@@ -33,10 +38,10 @@ public class ItemVistas extends ArrayAdapter<Inmueble> {
             itemView=li.inflate(R.layout.fragment_item_prop,parent,false);
         }
         Inmueble inmueble=lista.get(position);
-        ImageView imagen=itemView.findViewById(R.id.itemImagen);
-        TextView direccion=itemView.findViewById((R.id.direccion));
-        TextView precio=itemView.findViewById((R.id.precio));
-        TextView tipo=itemView.findViewById((R.id.tipo));
+        imagen=itemView.findViewById(R.id.itemImagen);
+        direccion=itemView.findViewById(R.id.direccion);
+        precio=itemView.findViewById(R.id.precio);
+        tipo=itemView.findViewById(R.id.tipo);
 
         imagen.setImageResource(inmueble.getFoto());
         direccion.setText(inmueble.getDireccion());

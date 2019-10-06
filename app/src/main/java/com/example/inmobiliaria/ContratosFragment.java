@@ -9,6 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 /**
@@ -66,7 +70,13 @@ public class ContratosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contratos, container, false);
+        View vista=inflater.inflate(R.layout.fragment_contratos, container, false);
+
+        CharSequence s=getArguments().getCharSequence("direccion");
+
+        muestraContrato(s.toString(),vista);
+
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,5 +116,34 @@ public class ContratosFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void muestraContrato(String dir, View view){
+        ArrayList<Alquiler> listaAlquiler=new ArrayList<>();
+
+        listaAlquiler.add(new Alquiler(25000,"23-01-2019","23-01-2020","Italia 1234"));
+        listaAlquiler.add(new Alquiler(18000,"10-10-2018","10-10-2019","Sarmiento 987"));
+        listaAlquiler.add(new Alquiler(12456,"05-07-2019","05-07-2020","Sucre 345"));
+        listaAlquiler.add(new Alquiler(22000,"03-04-2019","03-04-2020","Belgrano 970"));
+        TextView precio=view.findViewById(R.id.precioContrato);
+        TextView fInicio=view.findViewById(R.id.fechaInicio);
+        TextView fFin=view.findViewById(R.id.fechaFin);
+        TextView dirCon=view.findViewById(R.id.dirContrato);
+        for (Alquiler a:listaAlquiler) {
+            if(dir.equalsIgnoreCase(a.getInmueble())) {
+                dirCon.setText(a.getInmueble());
+                precio.setVisibility(View.VISIBLE);
+                precio.setText("$ " + a.getPrecio());
+                fInicio.setVisibility(View.VISIBLE);
+                fInicio.setText(a.getFechaInicio());
+                fFin.setVisibility(View.VISIBLE);
+                fFin.setText(a.getFechaFin());
+            }
+        }
+
+        if(dirCon.getText().equals("")){
+            dirCon.setText("Sin Conrato");
+        }
+
     }
 }
